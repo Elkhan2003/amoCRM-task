@@ -1,20 +1,30 @@
-const renderData = () => {
-	const renderData = users.map(
+const getLeads = async () => {
+	const response = await fetch(
+		`${cors_proxy}/https://hotbox2000.amocrm.ru/api/v4/leads`,
+		{
+			method: 'GET',
+			headers: {
+				Authorization: `Bearer ${access_token.accessToken}`
+			}
+		}
+	);
+	const responseData = await response.json();
+	return responseData._embedded.leads;
+};
+
+const renderData = async () => {
+	const usersData = await getLeads();
+	console.log(usersData);
+
+	const renderData = usersData.map(
 		(item) =>
 			`
 				<tr>
-					<td>${item.id}</td>
-					<td>${item.firstName}</td>
-					<td>${item.lastName}</td>
-					<td>${item.role}</td>
-					<td>${item.auth}</td>
-					<td>${item.login}</td>
-					<td>${item.password}</td>
-					<td>${item.isActive}</td>
+					<td>${item.name}</td>
 					<td>${item.price}</td>
-					<td>${item.traffic}</td>
-					<td>${item.createdAt}</td>
-					<td>${item.updateAt}</td>
+					<td>${item.name}</td>
+					<td>${new Date(item.created_at * 1000).toLocaleString()}</td>
+					<td>${new Date(item.updated_at * 1000).toLocaleString()}</td>
 				</tr>
 			`
 	);
