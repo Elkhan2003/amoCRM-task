@@ -1,6 +1,6 @@
 const getLeads = async () => {
 	const response = await fetch(
-		`${cors_proxy}/https://hotbox2000.amocrm.ru/api/v4/leads`,
+		`${cors_proxy}/https://${subdomain}.amocrm.ru/api/v4/leads`,
 		{
 			method: 'GET',
 			headers: {

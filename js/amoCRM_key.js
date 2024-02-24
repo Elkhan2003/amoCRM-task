@@ -1,4 +1,5 @@
 const cors_proxy = 'https://cors-anywhere.herokuapp.com';
+const subdomain = 'hotbox2000';
 
 const amoCRM_key = {
 	AMOCRM_CLIENT_SECRET:
@@ -29,7 +30,7 @@ const exchangeCodeForTokens = async () => {
 
 	try {
 		const response = await fetch(
-			`${cors_proxy}/https://hotbox2000.amocrm.ru/oauth2/access_token`,
+			`${cors_proxy}/https://${subdomain}.amocrm.ru/oauth2/access_token`,
 			{
 				method: 'POST',
 				headers: {
