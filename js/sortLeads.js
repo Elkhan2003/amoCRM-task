@@ -4,8 +4,8 @@ const sortByBudget = () => {
 	const rows = Array.from(tableBody.querySelectorAll('tr'));
 
 	rows.sort((rowA, rowB) => {
-		const budgetA = parseFloat(rowA.cells[1].textContent);
-		const budgetB = parseFloat(rowB.cells[1].textContent);
+		const budgetA = parseFloat(rowA.cells[2].textContent);
+		const budgetB = parseFloat(rowB.cells[2].textContent);
 
 		if (budgetSortOrder === 1) {
 			return budgetA - budgetB;
@@ -39,8 +39,8 @@ const sortByName = () => {
 	const rows = Array.from(tableBody.querySelectorAll('tr'));
 
 	rows.sort((rowA, rowB) => {
-		const nameA = rowA.cells[0].textContent.toLowerCase();
-		const nameB = rowB.cells[0].textContent.toLowerCase();
+		const nameA = rowA.cells[1].textContent.toLowerCase();
+		const nameB = rowB.cells[1].textContent.toLowerCase();
 
 		if (nameSortOrder === 1) {
 			return nameA.localeCompare(nameB);
