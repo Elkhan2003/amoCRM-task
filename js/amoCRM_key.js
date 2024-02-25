@@ -7,32 +7,84 @@ const amoCRMCredentials = {
 	AMOCRM_CLIENT_SECRET:
 		'8yUzLI2uPsKgM7IkJIz3wjrA9gOtiM6QDqV5cIJN6oRqpvX5UDIdvfjTi7hVvkCY',
 	AMOCRM_CODE:
-		'def50200c9aa91720707527b2eaa199182257b957c4e53d17fa3ea8a318b6afb429b4850b989e718fb7e2750caee1ab206a6d63750354be707671b54f03690b50e89c6f6421b500200fcdd3867821c638ca3281c799c110bc21db79dc59c1f1d5f2061028913032283c9fb554957b7383f9de6cb09143f5aa167b6bab7e371491ff7b73747695d8ecf0c60f69b810ea8cb9f5230e36e95bcb1db5fa159a253e871dd344e0580959c8d344a9d273e8ffe990f8afc360c256fca21992479707dc61b2d7b2ab62b7a838acc94f21f02c972eabde3c1dd2271ebdef4a39015a261ff0af6db1f4bfc4faf716f7d4b76b6dc3188c2a811cb73e834ced66f0c4f4f5dc4b97a2d5a56ccb1b782eb508e70e773770ae43c71a08c1d56617138019d83484fc11db7a868ef91da0f691f252dc2178a3f15eb8605393b8eff6aaaec1fcabc3f130b7b62bc6f242397616228807ee53c775f76224e1a9456234d427aba7d0b1ecc2ccc03f0a931e161fb4a6f2dad5605fb17b59b25a6ff816692e43382ea470d0ef7da590fe50c93ace5971aaf1212e1e4b35a3cb031aa762d3953d45c3d01aac8af26e98808eccfc4379285fa9ce3b1e90fee8a59f023a358d5186550dc29b6d7d42208728c94b7f79b63eebd2cbf6aeb0c58cf02eefa31642579eb07f01c1af5718e2a59e638',
+		'def50200e4994ee4872051a341256765ff0052677399d2b1930819662283611aaddc374ad7d6670aa0302e06994aacddcb69b71f8ed15ad3db2a12e1fbc592506a59e4f94fdb041c32872fe30b7a101604561baff0dd97a38ae2ebaec25d234336ee6a92736728b398cc2e7abd3152aa3b3c8e5e8955439c73814865aa5dd0293c7e1a6a5c10c62aef559af209403fe4fcf02cb5afbd594e00a80e41cf529070cf83a53902bd3eb27dd1a07609c20c0674d99caa936ddf7713727bca028f28a3c603475639a3c8e39f1e525a2f0506b6f6648be06fa4d82c5a3b1bfa18c8d7dfeb63e0e7a74828b3c83ea980cc67af70bbf7f2ce6df7b8c67eed88b8322499a98c431aa60433d51c80287772f60f0440ac1eb4150190529e2ace85e16ff9d8a0bc4417f1a10f6a333209debb859e536e7e3b229134bce3a79b0fea83cf13e81418ed781e8309b22fc2ee4b1c8b6a27a9bddfd574f096784feb7671a6d42ee791ae85e5b96fced166f7f6c25bdd67818dce66d59d49675ea6dd266a89c4b6f9c1737e635fcdc09145b1836c8b7f1e912eb3683f26466c8ca5505e16d53dfe55000953d317d3262c972a3b8574454e49c84f491a8ec373fc16177d1f88c0ae07954857464bf6902fd9b8367ebe8926f106b5948c0a4a9a37f373c76031cf25363d92560a39359e32',
 	AMOCRM_REDIRECT_URI: 'https://localhost:3000'
 };
 
 const token = {
 	accessToken:
-		'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjUyYzVkY2FhY2YwYWJhYmZmM2ZhMzZhNjBmMTJlMjdjZTZiNGM5NWIxMDc0OWI3NGM4ZmRkOGQwZjYwMGRmZjYxZGQ0OTJlYjM4ZDQxNGMzIn0.eyJhdWQiOiJmZWVlMzlkYi0xNGEzLTQwNjgtOTc1Yi0xNTI2YmYzZWI5MTAiLCJqdGkiOiI1MmM1ZGNhYWNmMGFiYWJmZjNmYTM2YTYwZjEyZTI3Y2U2YjRjOTViMTA3NDliNzRjOGZkZDhkMGY2MDBkZmY2MWRkNDkyZWIzOGQ0MTRjMyIsImlhdCI6MTcwODgyNTQ4NywibmJmIjoxNzA4ODI1NDg3LCJleHAiOjE3MDg5MTE4ODcsInN1YiI6IjEwNzE4Mjk4IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMxNTkxMjk0LCJiYXNlX2RvbWFpbiI6ImFtb2NybS5ydSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJwdXNoX25vdGlmaWNhdGlvbnMiLCJmaWxlcyIsImNybSIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiNDdkZTEyNTUtZWZmNy00YzJjLWIxMDItMDBlZDA5NGVlODUwIn0.T495rK1HmcPRfXtTELEQ2yeSVQbuN27NCUgtddHh9S8bM66SpXV9PLpGZojPVKFFkXcmJNSUJh_CiDi7ThEG2M2lFVndSSmPD1SI_dJk6pcnOY8NMUbZWFq1AX7SWT1eetE2xqrCcaBJF8Sy4hx4r8Hf8j6-dOCNLRZc_-OgGVrp1hLOU_gCZvYAfk4KpVuiWRKnjdT_LUbC2Pk_zaLWbyLLwHQ8-oHsJDwfVM7LesWdj-5MP3gyfEpK0liH-Cymk-w8m5WZNvKynPLOLan_-78NTzFuFJFOcAW2BrsY-KD0loBUmhc_1qg7d4E9u3ZyyeJ3VEP70H6f_FnSdbNoKA',
+		'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhkMTE0MWZlM2U2ZWE2ODlmYzgyNTgwOWZjNDAxMWQxY2RhY2FlYjcyMTRkN2EyNDdmODQ3YzNmNzBmOWZjMzMwY2VlZGQ1Zjg2ZmFjZGJkIn0.eyJhdWQiOiJmZWVlMzlkYi0xNGEzLTQwNjgtOTc1Yi0xNTI2YmYzZWI5MTAiLCJqdGkiOiI4ZDExNDFmZTNlNmVhNjg5ZmM4MjU4MDlmYzQwMTFkMWNkYWNhZWI3MjE0ZDdhMjQ3Zjg0N2MzZjcwZjlmYzMzMGNlZWRkNWY4NmZhY2RiZCIsImlhdCI6MTcwODgyNjQwNSwibmJmIjoxNzA4ODI2NDA1LCJleHAiOjE3MDg5MTI4MDUsInN1YiI6IjEwNzE4Mjk4IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMxNTkxMjk0LCJiYXNlX2RvbWFpbiI6ImFtb2NybS5ydSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJwdXNoX25vdGlmaWNhdGlvbnMiLCJmaWxlcyIsImNybSIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiZDE2MDA0ZTgtOGY3Yy00MjRlLWJjMzMtZTY2MTVmZTkzODFkIn0.kK8CAjupZr9ekChFboZ-Ua12Zzum0D08ZQ0M6gOiJk01zMOk6lJYvqMuxI3AdWTxzvWALF_KZxXCbNxC9UzVOu0w0KfAIMe2NABf_kimfvL9t3Tjm2bdI9VhQGwKiY1uFB_6DY2Y32WFzVmecL2b283KnsOELt9xQ9cvlIy-eYF3h2Ix6RYs7Da63C0tlkDQE9BvTS_OeJYXnfhHdQeiOMSlVeOSexz_izc9JCYo6lnRpBiHVZ7BSSb5CXiYJzkvgmPtO7hCcjKePE58AuqqzYATTG1055JGvw_3EiRmJRqzSTrwvTEVKrt1gtJt4S_-jQJR3aOYXo49VtEqCrrJQQ',
 	expiresIn: 86400,
 	refreshToken:
-		'def50200e91d129328c566b64b2caff08a0ac8b624bc480e3e9edde7f7de8a3bf6d63f87834ea9d5fe654916f8cb279934801b3c16007bc4cb8b0aef28eb799ba01926a1b18c1ea1fbecd05d22d66d63614aa9683822bcf07ee8fee538cc712e0bd5917aab2e6204a2421afe0ae5f2bc5c81d6324c93f3990f69419ec8c713567650fdba26b94878ad550cfa0d2e7cc24dff04921f89550bee2590049b1b6d555b31d0e86718cf0802459fbdbe574aba73ea61131bc217a9cc29a69f6be4a1b6ba8ba9de9af3b16ebceef75af7f622765c55da3923ef5135cb2bc5fd540f089d9372afc8bcaded150848fe2266b8bf5b2086755ece25094d13803bfbb3e3cbca6bd1d5fdfcc5949b7756ff5da1655ddb24979e79ced3f0773aabc33936330815095f187c6b8aa8a3c7dad3823037134cca8dc8a412631701398824e0663377e1fe572ab15a4d660051c1a0ae4edb278e40083af74161f1ba4a6c1fc70129fc408d208cf51a50a45e4a4c980185ad52a40760584b875a2b2f9d1b6a1d756a0c2c99044e65f19cb9dfd19bccab692db025a24812f51b4f0160dfb3aaf3349f3e0c603cb4ee0d7734eb2ca2374f47ee4363666f3772dc59abf201735ec31c93548fbdba1b5ba7326a2e3a6c3000b5f9d944d20d4e2a1b21c486886fbd3468b1987dea21965065af7b4fb11628483eef',
+		'def502002e15c7268354f33ced48d5fd2c7ac6ba1589dd7b6959c0b12470559052de7fc1c1bcc06a5f2392276b4afe7eb4022f3a6681441e49125e9a457f1a06aca27c51b97a681693317960dbac5487b66543b3f7eddb4011db08562e3e45bee18a0c8545b09738c127dda232167443507fd2b6603d6fc08fb25d7138e210ca7c233d93ff244396388e362e832d319e0d9fa1cd4a4b199b9fb21470c13cff6115f5c64313ff3e55e582e4e73c485d93c57a538095c945aac84b6cf2372e2c13c771ba2aabf42197865b11ca1381123c73dc0e742e04a90b67245b8272f83bb3d37e9484ccb95caeb91cc909552f6d729cda8256efa22d331c2636a965683eded2d736513bdb0e9e21c92dfd3dd148065ee8df97e2e48c66149773ed9fe8caf64b9e47c58ef509580b049b812349cd9bc8a0848f3ee45209372d22e32f84e56667f2567ef8f51513b67fd7a77efa3aef0ec7612de19482b204d775b4b8190c570867839b6606e4aadd39466f4627dc9c0dfa695bb109d78cd22a0e1d88d427e29b9ef86372f898e7d21a575e266ba2666c9d69afe4ffbcd5d257f195fdd81ed3043a5993c06e3e17f9ca64b5d7072986e6a4531c47d295f971a02de9fe1faead14efc7ec4e01a97572b70f7d44e5e63dfdd3ae27e32ba52980a80b677d4e7edaf915d53b09562e208be75fab77ae',
 	tokenType: 'Bearer'
 };
 
-const exchangeCodeForTokens = async () => {
-	const {
-		AMOCRM_CLIENT_ID,
-		AMOCRM_CLIENT_SECRET,
-		AMOCRM_CODE,
-		AMOCRM_REDIRECT_URI
-	} = amoCRMCredentials;
+// ! authorization
+// const exchangeCodeForTokens = async () => {
+// 	const {
+// 		AMOCRM_CLIENT_ID,
+// 		AMOCRM_CLIENT_SECRET,
+// 		AMOCRM_CODE,
+// 		AMOCRM_REDIRECT_URI
+// 	} = amoCRMCredentials;
+
+// 	const requestBody = {
+// 		client_id: AMOCRM_CLIENT_ID,
+// 		client_secret: AMOCRM_CLIENT_SECRET,
+// 		grant_type: 'authorization_code',
+// 		code: AMOCRM_CODE,
+// 		redirect_uri: AMOCRM_REDIRECT_URI
+// 	};
+
+// 	try {
+// 		const response = await fetch(
+// 			`${corsProxy}https://${subdomain}.amocrm.ru/oauth2/access_token`,
+// 			{
+// 				method: 'POST',
+// 				headers: {
+// 					'Content-Type': 'application/json'
+// 				},
+// 				body: JSON.stringify(requestBody)
+// 			}
+// 		);
+
+// 		if (!response.ok) {
+// 			throw new Error('Failed to exchange code for tokens');
+// 		}
+
+// 		const responseData = await response.json();
+// 		return responseData;
+// 	} catch (error) {
+// 		console.error('Error exchanging code for tokens:', error.message);
+// 		return null;
+// 	}
+// };
+
+// (async () => {
+// 	try {
+// 		const tokens = await exchangeCodeForTokens();
+// 		if (tokens && tokens.access_token && tokens.refresh_token) {
+// 			console.log('Access Token:', tokens.access_token);
+// 			console.log('Refresh Token:', tokens.refresh_token);
+// 		} else {
+// 			console.log('Failed to exchange code for tokens');
+// 		}
+// 	} catch (error) {
+// 		console.error('Error:', error);
+// 	}
+// })();
+
+// ! refresh token
+const refreshTokenFunc = async (refreshToken) => {
+	const { AMOCRM_CLIENT_ID, AMOCRM_CLIENT_SECRET, AMOCRM_REDIRECT_URI } =
+		amoCRMCredentials;
 
 	const requestBody = {
 		client_id: AMOCRM_CLIENT_ID,
 		client_secret: AMOCRM_CLIENT_SECRET,
-		grant_type: 'authorization_code',
-		code: AMOCRM_CODE,
+		grant_type: 'refresh_token',
+		refresh_token: refreshToken,
 		redirect_uri: AMOCRM_REDIRECT_URI
 	};
 
@@ -49,25 +101,26 @@ const exchangeCodeForTokens = async () => {
 		);
 
 		if (!response.ok) {
-			throw new Error('Failed to exchange code for tokens');
+			throw new Error('Failed to refresh access token');
 		}
 
 		const responseData = await response.json();
 		return responseData;
 	} catch (error) {
-		console.error('Error exchanging code for tokens:', error.message);
+		console.error('Error refreshing access token:', error.message);
 		return null;
 	}
 };
 
 (async () => {
 	try {
-		const tokens = await exchangeCodeForTokens();
-		if (tokens && tokens.access_token && tokens.refresh_token) {
-			console.log('Access Token:', tokens.access_token);
-			console.log('Refresh Token:', tokens.refresh_token);
+		const { refreshToken } = token;
+		const refreshedTokens = await refreshTokenFunc(refreshToken);
+		if (refreshedTokens && refreshedTokens.access_token) {
+			console.log('Refreshed Access Token:', refreshedTokens.access_token);
+			console.log('New Refresh Token:', refreshedTokens.refresh_token);
 		} else {
-			console.log('Failed to exchange code for tokens');
+			console.log('Failed to refresh access token');
 		}
 	} catch (error) {
 		console.error('Error:', error);

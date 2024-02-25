@@ -44,7 +44,6 @@ const mergeData = (leadsData, contactsData) => {
 };
 
 const renderTable = (data) => {
-	console.log(data);
 	const renderData = data.map(
 		(item) => `
         <tr>
