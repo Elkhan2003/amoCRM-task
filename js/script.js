@@ -1,7 +1,9 @@
 const fetchData = async (entityType, limit) => {
+	const minPrice = 100;
+	const maxPrice = 1000;
 	try {
 		const response = await fetch(
-			`${cors_proxy}https://${subdomain}.amocrm.ru/api/v4/${entityType}?limit=${limit}`,
+			`${cors_proxy}https://${subdomain}.amocrm.ru/api/v4/${entityType}?&limit=${limit}`,
 			{
 				method: 'GET',
 				headers: {
