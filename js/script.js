@@ -1,13 +1,20 @@
-const fetchData = async (entityType, limit) => {
-	const minPrice = 100;
-	const maxPrice = 1000;
+let lastFetchTime = 0;
+
+const fetchDataWithRateLimit = async (entityType, limit) => {
+	const now = Date.now();
+	const timeElapsed = now - lastFetchTime;
+	if (timeElapsed < 500) {
+		await new Promise((resolve) => setTimeout(resolve, 500 - timeElapsed));
+	}
+	lastFetchTime = Date.now();
+
 	try {
 		const response = await fetch(
-			`${cors_proxy}https://${subdomain}.amocrm.ru/api/v4/${entityType}?&limit=${limit}`,
+			`${corsProxy}https://${subdomain}.amocrm.ru/api/v4/${entityType}?&limit=${limit}`,
 			{
 				method: 'GET',
 				headers: {
-					Authorization: `Bearer ${access_token.accessToken}`
+					Authorization: `Bearer ${token.accessToken}`
 				}
 			}
 		);
@@ -40,14 +47,14 @@ const renderTable = (data) => {
 	console.log(data);
 	const renderData = data.map(
 		(item) => `
-		<tr>
-			<td>${item.leadName}</td>
-			<td>${item.price}</td>
-			<td>${item.contactName}</td>
-			<td>${new Date(item.created_at * 1000).toLocaleString()}</td>
-			<td>${new Date(item.updated_at * 1000).toLocaleString()}</td>
-		</tr>
-	`
+        <tr>
+            <td>${item.leadName}</td>
+            <td>${item.price}</td>
+            <td>${item.contactName}</td>
+            <td>${new Date(item.created_at * 1000).toLocaleString()}</td>
+            <td>${new Date(item.updated_at * 1000).toLocaleString()}</td>
+        </tr>
+    `
 	);
 	const tableBody = document.getElementById('tableBody');
 	tableBody.innerHTML = renderData.join('');
@@ -56,8 +63,8 @@ const renderTable = (data) => {
 const renderData = async (limit) => {
 	try {
 		const [leadsData, contactsData] = await Promise.all([
-			fetchData('leads', limit),
-			fetchData('contacts', limit)
+			fetchDataWithRateLimit('leads', limit),
+			fetchDataWithRateLimit('contacts', limit)
 		]);
 		const mergedData = mergeData(leadsData, contactsData);
 		renderTable(mergedData);
