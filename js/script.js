@@ -45,8 +45,9 @@ const mergeData = (leadsData, contactsData) => {
 
 const renderTable = (data) => {
 	const renderData = data.map(
-		(item) => `
+		(item, index) => `
         <tr>
+            <td>${index + 1}</td>
             <td>${item.leadName}</td>
             <td>${item.price}</td>
             <td>${item.contactName}</td>
