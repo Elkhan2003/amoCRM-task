@@ -37,6 +37,7 @@ const mergeData = (leadsData, contactsData) => {
 };
 
 const renderTable = (data) => {
+	console.log(data);
 	const renderData = data.map(
 		(item) => `
 		<tr>
@@ -59,7 +60,6 @@ const renderData = async (limit) => {
 			fetchData('contacts', limit)
 		]);
 		const mergedData = mergeData(leadsData, contactsData);
-		console.log(mergedData);
 		renderTable(mergedData);
 	} catch (error) {
 		console.error('Error rendering data:', error);

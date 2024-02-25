@@ -12,7 +12,8 @@ const sortByBudget = () => {
 		} else if (budgetSortOrder === 2) {
 			return budgetB - budgetA;
 		} else {
-			return 0;
+			budgetSortOrder = 1;
+			return budgetA - budgetB;
 		}
 	});
 
@@ -46,7 +47,8 @@ const sortByName = () => {
 		} else if (nameSortOrder === 2) {
 			return nameB.localeCompare(nameA);
 		} else {
-			return 0;
+			nameSortOrder = 1;
+			return nameA.localeCompare(nameB);
 		}
 	});
 
